@@ -1,6 +1,9 @@
+from webbrowser import get
 import requests
 
-endpoint = "httpbin.org/status/200/"
-endpoint = "httpbin.org"
+endpoint = "http://127.0.0.1:8000/"
 
-requests.get()
+get_response = requests.get(endpoint, json={"query": "hello world"})
+
+print(get_response.text)
+print(get_response.status_code)
